@@ -6,12 +6,12 @@ import {
 } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { Product } from './models';
-import { Op } from 'sequelize';
+import { Op, where } from 'sequelize';
 import { sortField, sortOrder } from 'src/enums';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { fsHelper } from 'src/helpers';
-import { CreateDto, GetAllDto } from './dtos';
+import { CreateDto, GetAllDto, UpdateDto } from './dtos';
 
 @Injectable()
 export class ProductService implements OnModuleInit {
@@ -106,11 +106,80 @@ export class ProductService implements OnModuleInit {
     };
   }
 
-  async update() {}
+  async updateImage(payload: Express.Multer.File, id: number) {
+    const founded = await this.productModel.findByPk(id);
 
-  async delete() {}
+    if (!founded) {
+      throw new NotFoundException('Product not found with given id');
+    }
 
-  async updateImage() {}
+    const userImage = founded.dataValues.image_url;
+    if (userImage && fs.existsSync(path.join(process.cwd(), 'uploads', userImage))) {
+      await this.fs.unlinkFile(userImage);
+    }
+
+    const image = await this.fs.uploadFile(payload);
+
+    await this.productModel.update(
+      {
+        image_url: image.fileUrl,
+      },
+      { where: { id }, returning: true },
+    );
+    const res = await this.productModel.findByPk(id);
+
+    return {
+      message: 'success',
+      data: res,
+    };
+  }
+
+  async delete(id: number) {
+    const founded = await this.productModel.findByPk(id);
+
+    if (!founded) {
+      throw new NotFoundException('Product not found with given id');
+    }
+
+    const rasm = founded.dataValues.image_url;
+    console.log(founded.dataValues);
+
+    if (rasm && fs.existsSync(path.join(process.cwd(), 'uploads', rasm))) {
+      await this.fs.unlinkFile(rasm);
+    }
+    await this.productModel.destroy({ where: { id } });
+
+    return {
+      message: 'success',
+      data: founded,
+    };
+  }
+
+  async update(payload: UpdateDto, id: number) {
+    const founded = await this.productModel.findByPk(id);
+
+    if (!founded) {
+      throw new NotFoundException('Product not found with given id');
+    }
+
+    const product = await this.productModel.update(
+      {
+        name: payload.name,
+        description: payload.description,
+        price: payload.price,
+        discount: payload.discount,
+        stock: payload.stock,
+        status: payload.status,
+        rating: payload.rating,
+      },
+      { where: { id }, returning: true },
+    );
+
+    return {
+      message: 'success',
+      data: product,
+    };
+  }
 
   async #seedProducts() {
     const res = fs.readFileSync(

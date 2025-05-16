@@ -64,10 +64,8 @@ export class UserService implements OnModuleInit {
       throw new ConflictException('Incorrect email or password');
     }
 
-    const isCorrectPassword = await bcrypt.compare(
-      payload.password,
-      founded?.dataValues.password,
-    );
+    const password = founded.dataValues.password;
+    const isCorrectPassword = await bcrypt.compare(payload.password, password);
     if (!isCorrectPassword) {
       throw new ConflictException('Incorrect email or password');
     }

@@ -1,30 +1,39 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Transform } from 'class-transformer';
-import { IsEnum, IsInt, IsPositive, IsString } from 'class-validator';
+import {
+  IsEnum,
+  IsInt,
+  IsOptional,
+  IsPositive,
+  IsString,
+} from 'class-validator';
 import { rating, status } from 'src/enums';
 
-export class CreateDto {
+export class UpdateDto {
   @ApiProperty({
     type: 'string',
     example: 'kir mashina',
-    required: true,
+    required: false,
   })
+  @IsOptional()
   @IsString()
   name: string;
 
   @ApiProperty({
     type: 'string',
     example: 'uy jihozi',
-    required: true,
+    required: false,
   })
+  @IsOptional()
   @IsString()
   description: string;
 
   @ApiProperty({
     type: 'number',
     example: 50,
-    required: true,
+    required: false,
   })
+  @IsOptional()
   @Transform(({ value }) => parseInt(value))
   @IsInt()
   @IsPositive()
@@ -33,8 +42,9 @@ export class CreateDto {
   @ApiProperty({
     type: 'number',
     example: 20,
-    required: true,
+    required: false,
   })
+  @IsOptional()
   @Transform(({ value }) => parseInt(value))
   @IsInt()
   @IsPositive()
@@ -43,27 +53,30 @@ export class CreateDto {
   @ApiProperty({
     type: 'number',
     example: 50,
-    required: true,
+    required: false,
   })
+  @IsOptional()
   @Transform(({ value }) => parseInt(value))
   @IsInt()
   stock: number;
 
   @ApiProperty({
     enum: rating,
+    enumName: 'rating',
     example: rating.One,
-    required: true,
-    type: 'string',
+    required: false,
   })
+  @IsOptional()
   @IsEnum(rating)
-  rating?: rating;
+  rating: rating;
 
   @ApiProperty({
     enum: status,
+    enumName: 'status',
     example: status.active,
-    required: true,
-    type: 'string',
+    required: false,
   })
+  @IsOptional()
   @IsEnum(status)
-  status?: status;
+  status: status;
 }

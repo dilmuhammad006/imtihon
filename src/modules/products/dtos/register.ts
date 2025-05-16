@@ -20,7 +20,7 @@ export class RegisterDto {
     example: 'john@gmail.com',
   })
   @IsString()
-  @MaxLength(30)
+  @MaxLength(50)
   @IsEmail()
   email: string;
 
