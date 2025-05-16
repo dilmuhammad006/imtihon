@@ -21,6 +21,6 @@ import { fsHelper } from 'src/helpers';
     }),
   ],
   controllers: [UserController, ProductController],
-  providers: [UserService, ProductService, JwtService, fsHelper],
+  providers: [UserService, ProductService, fsHelper],
 })
 export class ProductModule {}
