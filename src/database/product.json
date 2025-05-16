@@ -1,0 +1,182 @@
+[
+    {
+        "name": "Digital Stopwatch Timer",
+        "description": "Accurate stopwatch for timing events and workouts.",
+        "price": 12.99,
+        "discount": 12,
+        "stock": 16,
+        "rating": 5,
+        "status": "out_of_stock"
+    },
+    {
+        "name": "Beet Salad",
+        "description": "Ready-to-eat beet salad with dressing, great side dish.",
+        "price": 3.99,
+        "discount": 3,
+        "stock": 44,
+        "rating": 3,
+        "status": "inactive"
+    },
+    {
+        "name": "Warm Knit Beanie",
+        "description": "Stay warm with this stylish knit beanie in various colors.",
+        "price": 19.99,
+        "discount": 10,
+        "stock": 13,
+        "rating": 1,
+        "status": "out_of_stock"
+    },
+    {
+        "name": "Phone Screen Protector",
+        "description": "Tempered glass screen protector for smartphones.",
+        "price": 12.99,
+        "discount": 23,
+        "stock": 95,
+        "rating": 2,
+        "status": "inactive"
+    },
+    {
+        "name": "Reclining Camping Chair",
+        "description": "Foldable reclining camping chair with cup holder.",
+        "price": 49.99,
+        "discount": 24,
+        "stock": 16,
+        "rating": 1,
+        "status": "out_of_stock"
+    },
+    {
+        "name": "Mango Chia Pudding",
+        "description": "Healthy chia pudding made with mango and coconut milk.",
+        "price": 4.49,
+        "discount": 12,
+        "stock": 27,
+        "rating": 4,
+        "status": "active"
+    },
+    {
+        "name": "Customizable Name Plate",
+        "description": "Personalized nameplate for offices or homes.",
+        "price": 19.99,
+        "discount": 12,
+        "stock": 13,
+        "rating": 2,
+        "status": "active"
+    },
+    {
+        "name": "LED Makeup Mirror",
+        "description": "Illuminated vanity mirror with adjustable brightness settings.",
+        "price": 39.99,
+        "discount": 4,
+        "stock": 20,
+        "rating": 4,
+        "status": "inactive"
+    },
+    {
+        "name": "Strawberry Rhubarb Jam",
+        "description": "A sweet and tart jam, perfect on toast or in desserts.",
+        "price": 4.29,
+        "discount": 30,
+        "stock": 22,
+        "rating": 1,
+        "status": "active"
+    },
+    {
+        "name": "Overnight Duffle Bag",
+        "description": "Spacious duffle bag for weekend getaways.",
+        "price": 34.99,
+        "discount": 2,
+        "stock": 82,
+        "rating": 1,
+        "status": "inactive"
+    },
+    {
+        "name": "Compressible Packing Cubes",
+        "description": "Organizational cubes for easy packing and travel.",
+        "price": 29.99,
+        "discount": 20,
+        "stock": 59,
+        "rating": 4,
+        "status": "out_of_stock"
+    },
+    {
+        "name": "Outdoor Inflatable Pool",
+        "description": "Large inflatable pool for summer fun in your backyard.",
+        "price": 149.99,
+        "discount": 17,
+        "stock": 73,
+        "rating": 5,
+        "status": "inactive"
+    },
+    {
+        "name": "Scented Candle Set",
+        "description": "Set of soothing scented candles for relaxation and ambiance.",
+        "price": 24.99,
+        "discount": 3,
+        "stock": 99,
+        "rating": 3,
+        "status": "inactive"
+    },
+    {
+        "name": "Red Lentils",
+        "description": "Nutritious and quick-cooking red lentils.",
+        "price": 1.99,
+        "discount": 5,
+        "stock": 71,
+        "rating": 2,
+        "status": "active"
+    },
+    {
+        "name": "Almond Flour Biscuits",
+        "description": "Gluten-free biscuits made with almond flour.",
+        "price": 6.49,
+        "discount": 20,
+        "stock": 34,
+        "rating": 2,
+        "status": "inactive"
+    },
+    {
+        "name": "Caramelized Onion Dip",
+        "description": "Creamy dip made with caramelized onions, perfect for chips or veggies.",
+        "price": 3.99,
+        "discount": 11,
+        "stock": 15,
+        "rating": 4,
+        "status": "inactive"
+    },
+    {
+        "name": "Herb Seasoned Rice",
+        "description": "A flavorful rice side dish seasoned with herbs and spices.",
+        "price": 2.99,
+        "discount": 22,
+        "stock": 24,
+        "rating": 1,
+        "status": "inactive"
+    },
+    {
+        "name": "Compact Pop-Up Tent",
+        "description": "Easy setup tent perfect for camping and outdoor festivals.",
+        "price": 69.99,
+        "discount": 23,
+        "stock": 60,
+        "rating": 1,
+        "status": "inactive"
+    },
+    {
+        "name": "Classic Black Trousers",
+        "description": "Timeless black trousers for a smart and sophisticated look.",
+        "price": 54.99,
+        "discount": 29,
+        "stock": 48,
+        "rating": 4,
+        "status": "inactive"
+    },
+    {
+        "name": "Wireless Range Extender",
+        "description": "Boost your Wi-Fi signal for better coverage.",
+        "price": 49.99,
+        "discount": 12,
+        "stock": 85,
+        "rating": 4,
+        "status": "out_of_stock"
+    }
+]
